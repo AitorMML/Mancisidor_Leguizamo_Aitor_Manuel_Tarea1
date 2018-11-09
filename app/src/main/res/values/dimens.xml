@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="layout_padding">15dp</dimen>
+    <dimen name="largeTextSize">20sp</dimen>
+    <dimen name="likeSize">10dp</dimen>
+    <dimen name="button_padding">5dp</dimen>
+
+</resources>

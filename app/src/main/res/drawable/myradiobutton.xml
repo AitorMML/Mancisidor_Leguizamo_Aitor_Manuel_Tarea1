@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:state_checked="true">
+        <shape android:shape="rectangle" android:padding="10dp">
+            <solid android:color="@color/buttonBrown"/>
+            <corners
+                android:topLeftRadius="@dimen/button_padding"
+                android:bottomLeftRadius="@dimen/button_padding"
+                android:bottomRightRadius="@dimen/button_padding"
+                android:topRightRadius="@dimen/button_padding"/>
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle" android:padding="@dimen/button_padding">
+            <stroke android:width="1dp" android:color="@color/buttonBrown"/>
+            <corners
+                android:topLeftRadius="@dimen/button_padding"
+                android:bottomLeftRadius="@dimen/button_padding"
+                android:bottomRightRadius="@dimen/button_padding"
+                android:topRightRadius="@dimen/button_padding"/>
+        </shape>
+    </item>
+</selector>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tarea2</string>
+
+    <string name="bicycle">BICICLETA VINTAGE</string>
+
+    <string name="color">COLOR</string>
+
+    <string name="size_small">P</string>
+    <string name="size_medium">M</string>
+    <string name="size_large">G</string>
+    <string name="size_xl">XG</string>
+
+    <string name="like_pressed">+1 a bicicleta vintage</string>
+
+    <string name="description">DESCRIPCION</string>
+    <string name="description_body">Marco personalizado de acero ligero, sin restaurar en hermosa condición original. Poco uso y bien mantenida. Construcción completa de record</string>
+    <string name="measurement">MEDIDAS</string>
+    <string name="measurement_body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+
+    <string name="button_add">AGREGAR AL CARRO</string>
+    <string name="button_added">AGREGADO AL CARRO</string>
+    <string name="undo">DESHACER</string>
+    <string name="already_in_cart">Artículo ya presente en elcarro</string>
+</resources>
