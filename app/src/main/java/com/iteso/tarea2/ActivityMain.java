@@ -25,6 +25,7 @@ public class ActivityMain extends AppCompatActivity {
     int selectedColor = 1;
     int selectedSize = 1;
 
+
     boolean checked = false;
 
     @Override
@@ -54,6 +55,18 @@ public class ActivityMain extends AppCompatActivity {
         addToCart = findViewById(R.id.activity_main_add);
 
 
+        if(savedInstanceState != null) {
+            selectedColor = savedInstanceState.getInt("selected_color");
+            selectedSize = savedInstanceState.getInt("selected_size");
+            checked = savedInstanceState.getBoolean("added_to_cart");
+
+            if(checked == true){
+                showSnackbar();
+            }
+
+        }
+
+
         //like
         like.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,28 +81,43 @@ public class ActivityMain extends AppCompatActivity {
         addToCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checked == true) {
-                    Toast alreadyInCart = Toast.makeText(ActivityMain.this,
-                            R.string.already_in_cart
-                            , Toast.LENGTH_LONG);
-                    alreadyInCart.show();
-                }
-                else {
-                    addToCart.setText(R.string.button_added);
-
-                    Snackbar.make(linearLayout, R.string.button_added, Snackbar.LENGTH_INDEFINITE)
-                            .setAction(R.string.undo, new View.OnClickListener() {
-                                @Override
-                                public void onClick(View view) {
-                                    addToCart.setText(R.string.button_add);
-                                    checked = false;
-                                }
-                            })
-                            .show();
-                }
+                showSnackbar();
                 checked = true;
             }
         });
+    }
+
+    public void showSnackbar() {
+        if(checked == true) {
+            Toast alreadyInCart = Toast.makeText(ActivityMain.this,
+                    R.string.already_in_cart
+                    , Toast.LENGTH_LONG);
+            alreadyInCart.show();
+
+
+            Snackbar.make(linearLayout, R.string.button_added, Snackbar.LENGTH_INDEFINITE)
+                    .setAction(R.string.undo, new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            addToCart.setText(R.string.button_add);
+                            checked = false;
+                        }
+                    })
+                    .show();
+        }
+        else {
+            addToCart.setText(R.string.button_added);
+
+            Snackbar.make(linearLayout, R.string.button_added, Snackbar.LENGTH_INDEFINITE)
+                    .setAction(R.string.undo, new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            addToCart.setText(R.string.button_add);
+                            checked = false;
+                        }
+                    })
+                    .show();
+        }
     }
 
     //radio buttons
@@ -147,4 +175,15 @@ public class ActivityMain extends AppCompatActivity {
 
     }
 
+    //salvar estado de aplicación
+
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putInt("selected_color", selectedColor);
+        outState.putInt("selected_size", selectedSize);
+        outState.putBoolean("added_to_cart", checked);
+
+        super.onSaveInstanceState(outState);
+    }
 }
